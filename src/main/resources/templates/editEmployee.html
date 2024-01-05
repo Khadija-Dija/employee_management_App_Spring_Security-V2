@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1.html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="employees">
+    <div class="row mt-3">
+        <div class="col-md-6 offset-3">
+            <div class="card">
+                <div class="card-header"> Edit Patient</div>
+                <div class="card-body">
+                    <div class="p-3">
+                        <form th:action="@{/admin/saveEmployee}" method="post">
+                            <div class="mb-2">
+                                <label class="from-label" >Id </label>
+                                <label class="from-label" th:text="${employee.id}"></label>
+                               <input type="hidden" name="id" class="form-control" th:value="${employee.id}">
+
+                            </div>
+                            <div class="mb-2">
+                                <label class="from-label" >Name </label>
+                                <input type="text" name="name" class="form-control" th:value="${employee.name}">
+                                <span class="text-danger" th:errors="${employee.name}"></span>
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-check-label">Male</label>
+                                <input class="form-check-input" type="radio" name="gender" value="Male" th:checked="${employee.gender == 'Male'}">
+
+                                <label class="form-check-label">Female</label>
+                                <input class="form-check-input" type="radio" name="gender" value="Female" th:checked="${employee.gender == 'Female'}">
+                            </div>
+                            <div class="mb-2">
+                                <label class="from-label" >Phone Number </label>
+                                <input type="text" name="phoneNumber" class="form-control" th:value="${employee.phoneNumber}">
+                                <span class="text-danger" th:errors="${employee.phoneNumber}"></span>
+                            </div>
+                            <div class="mb-2">
+                                <label class="from-label" >Email </label>
+                                <input type="text" name="emailAddress" class="form-control" th:value="${employee.emailAddress}">
+                                <span class="text-danger" th:errors="${employee.emailAddress}"></span>
+                            </div>
+                            <div class="mb-2">
+                                <label class="from-label" >Identification Number </label>
+                                <input type="text" name="identificationNumber" class="form-control" th:value="${employee.identificationNumber}">
+                                <span class="text-danger" th:errors="${employee.identificationNumber}"></span>
+                            </div>
+                            <div class="mb-2">
+                                <label class="from-label" >Date Naissance </label>
+                                <input type="date" name="dateBirth" class="form-control" th:value="${employee.dateBirth}">
+                                <span class="text-danger" th:errors="${employee.dateBirth}"></span>
+                            </div>
+                            <button class="btn btn-success">Update</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

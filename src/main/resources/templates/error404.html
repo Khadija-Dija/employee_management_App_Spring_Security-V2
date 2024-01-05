@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/webjars/bootstrap-icons/1.11.1/font/bootstrap-icons.css">
+    <script src="/webjars/bootstrap/5.3.1/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+<div class="d-flex align-items-center justify-content-center vh-100">
+    <div class="text-center">
+        <h1 class="display-1 fw-bold">404</h1>
+        <p class="fs-3"> <span class="text-danger">Opps!</span> Page not found.</p>
+        <p class="lead">
+            The page you’re looking for doesn’t exist.
+        </p>
+        <a href="index.html" class="btn btn-primary" th:href="@{/user/index}">Go Home</a>
+    </div>
+</div>
+</body>
+</html>
